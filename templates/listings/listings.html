@@ -1,0 +1,68 @@
+ {% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+  {% block content %}
+<!---Новые свойства для вас-->
+
+    <div class="site-section site-section-sm bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="site-section-title">
+              <h2>Новые свойства для вас</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+            {% if listings %}
+             {% for listing in listings %}
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="{% url 'listing' listing.id %}" class="prop-entry d-block">
+              <figure>
+                <img src="{{ listing.photo_main.url }}" alt="Image" class="img-fluid">
+              </figure>
+              <div class="prop-text">
+                <div class="inner">
+                  <span class="price rounded">€{{ listing.price }}</span>
+                  <h3 class="title">{{ listing.title }}</h3>
+                </div>
+
+                <div class="prop-more-info">
+                  <div class="inner d-flex">
+                    <div class="col">
+                      <span>Площадь:</span>
+                      <strong>{{ listing.sqft }}m<sup>2</sup></strong>
+                    </div>
+                    <div class="col">
+                      <span>Спальни:</span>
+                      <strong>{{ listing.bedrooms }}</strong>
+                    </div>
+                    <div class="col">
+                      <span>Ванны:</span>
+                      <strong>{{ listing.bathrooms }}</strong>
+                    </div>
+                    <div class="col">
+                      <span>Гаражи:</span>
+                      <strong>{{ listing.garage }}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+        <!---Новые свойства для вас-->
+            {% endfor %}
+
+            {% else %}
+              <div class="col-md-12">
+              <p>Нет доступных объявлений</p>
+              </div>
+
+             {% endif %}
+
+        {% endblock %}

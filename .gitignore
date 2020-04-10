@@ -1,0 +1,8 @@
+# не добавлеть папку совсем содержимым
+.idea/
+copy/
+media/
+*agent_real_db.sqlite3
+*.pyc
+emailsettings.py
+-------
