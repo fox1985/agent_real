@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
+from audioop import reverse
+
 from listings.models import Listing, Category, Galary_image
 from django.contrib import auth
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from .choices import price_choices, bedroom_choices, state_choices
+from order.forms import OrderForm
 
 # Create your views here.
 
@@ -55,10 +59,20 @@ def listing(request, listing_id):
   """Страница listing"""
   listing = get_object_or_404(Listing, pk=listing_id)
   categorys = Category.objects.order_by('name').filter(is_published=True)
+  form = OrderForm(request.POST or None, initial={'listing': listing} )
+
+  if request.method == "POST":
+    if form.is_valid():
+      form.save()
+      return  HttpResponseRedirect(reverse('listing', kwargs={'listing_id': listing_id}))
+
+
+
 
   context = {
     'listing': listing,
-    'categorys': categorys
+    'categorys': categorys,
+    'form' : form
   }
 
   return render(request, 'listings/listing.html', context)

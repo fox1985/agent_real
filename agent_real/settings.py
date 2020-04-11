@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'pages',
     'realtors',
     'django_cleanup.apps.CleanupConfig',
+    'order',
 ]
 
 MIDDLEWARE = [
