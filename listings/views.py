@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from audioop import reverse
-
 from listings.models import Listing, Category, Galary_image
 from django.contrib import auth
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from .choices import price_choices, bedroom_choices, state_choices
 from order.forms import OrderForm
+from django.core.urlresolvers import reverse
 
 # Create your views here.
 
@@ -64,7 +63,7 @@ def listing(request, listing_id):
   if request.method == "POST":
     if form.is_valid():
       form.save()
-      return  HttpResponseRedirect(reverse('listing', kwargs={'listing_id': listing_id}))
+      return  HttpResponseRedirect("{}?sended=True".format(reverse('listing', kwargs={'listing_id': listing_id})), )
 
 
 
@@ -72,7 +71,8 @@ def listing(request, listing_id):
   context = {
     'listing': listing,
     'categorys': categorys,
-    'form' : form
+    'form' : form,
+    'sended': request.GET.get("sended", False)
   }
 
   return render(request, 'listings/listing.html', context)

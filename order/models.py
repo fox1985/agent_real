@@ -12,8 +12,10 @@ class Order(models.Model):
     listing = models.ForeignKey(Listing, verbose_name='список')
     name = models.CharField(max_length=100, verbose_name='Имя',)
     email = models.EmailField()
+    nomer = models.CharField(max_length=100, verbose_name='Номер ID')
+    text = models.TextField(verbose_name='Сообщения',)
     date = models.DateTimeField(default=datetime.now, blank=True)
 
     class Meta:
-        verbose_name = u'Форма обртной связи'
-        verbose_name_plural = u'Форма обртной связи'
+        verbose_name = u'Заявка'
+        verbose_name_plural = u'Заявки'
