@@ -35,7 +35,6 @@
       </div>
     </div>
 
-
     <div class="site-section site-section-sm">
       <div class="container">
         <div class="row">
@@ -75,7 +74,26 @@
                 </ul>
                 </div>
               </div>
+                <!--Редактироать товар--->
+           {# Авторизированый пользователь да или нет #}
+                {% if request.user.is_authenticated %}
+             <section id="bc" class="mt-3">
+                <div class="container">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                      </li>
+                        <li class="breadcrumb-item">
 
+                            <a href="{% url 'edit_page' listing.id %}">Редактировать</a>
+
+                        </li>
+                    </ol>
+                  </nav>
+                </div>
+         </section>
+                {% endif %}
+                <!--Редактироать товар--->
               <div class="row mb-5">
                 <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
                   <span class="d-inline-block text-black mb-0 caption-text">Тип Недвижимости</span>
