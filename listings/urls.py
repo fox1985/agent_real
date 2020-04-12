@@ -22,10 +22,18 @@ from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from . import  edit
 
 urlpatterns = [
     url(r'^listings/', views.listings, name='listings'),
     url(r'^category/(?P<cat_id>[0-9]+)/$', views.category_page, name='category_page'),#Выборка категорий
     url(r'^listing/(?P<listing_id>[0-9])/$', views.listing, name='listing'),
+
+    url(r'^add/$', edit.Form_Galary_View.as_view(), name="new_page"),# Добавить товар
+
+
+    url(r'^page/(?P<listing_id>[0-9])/edit/$', edit.Realty_PageUpdate.as_view(), name='edit_page'),# редактировать товар
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,6 +4,31 @@
 {% load humanize %}
 
   {% block content %}
+
+      <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">
+              <i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="breadcrumb-item active"> Просмотр списков</li>
+
+            <li class="breadcrumb-item">
+                 {# Авторизированый пользователь да или нет #}
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'new_page' %}">Добавить</a>
+                {% endif %}
+            </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+
+
 <!---Новые свойства для вас-->
 
     <div class="site-section site-section-sm bg-light">

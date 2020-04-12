@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'realtors',
     'django_cleanup.apps.CleanupConfig',
     'order',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
