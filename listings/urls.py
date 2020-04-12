@@ -14,7 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 
-    url('^listing/(?P<listing_id>[0-9])/$', name='listing'),
+    url(r'^listing/(?P<listing_id>\d+)/$', views.listing, name='listing'),
 """
 
 
@@ -26,8 +26,8 @@ from . import  edit
 
 urlpatterns = [
     url(r'^listings/', views.listings, name='listings'),
-    url(r'^category/(?P<cat_id>[0-9]+)/$', views.category_page, name='category_page'),#Выборка категорий
-    url(r'^listing/(?P<listing_id>[0-9])/$', views.listing, name='listing'),
+    url(r'^category/(?P<cat_id>\d+)/$', views.category_page, name='category_page'),#Выборка категорий
+    url(r'^listing/(?P<listing_id>\d+)/$', views.listing, name='listing'),
 
     url(r'^add/$', edit.Form_Galary_View.as_view(), name="new_page"),# Добавить товар
 
