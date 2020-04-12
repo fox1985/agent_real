@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^add/$', edit.Form_Galary_View.as_view(), name="new_page"),# Добавить товар
 
 
-    url(r'^page/(?P<listing_id>[0-9])/edit/$', edit.Realty_PageUpdate.as_view(), name='edit_page'),# редактировать товар
+    url(r'^listing/(?P<listing_id>[0-9])/edit/$', edit.Realty_PageUpdate.as_view(), name='edit_page'),# редактировать товар
 
 
 
