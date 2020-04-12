@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.core.mail import send_mail
 from listings.models import Listing, Category, Galary_image
 from django.contrib import auth
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
@@ -63,6 +64,8 @@ def listing(request, listing_id):
   if request.method == "POST":
     if form.is_valid():
       form.save()
+      send_mail('Заявка от torrehome.ru', 'Зайдите в админку чтобы почетать заявку http://torrehome.ru/admin/ ',  'http://torrehome.ru/admin/',
+                ['artemdav2@gmail.com'], fail_silently=False)
       return  HttpResponseRedirect("{}?sended=True".format(reverse('listing', kwargs={'listing_id': listing_id})), )
 
 
