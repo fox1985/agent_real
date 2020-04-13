@@ -161,3 +161,6 @@ from emailsettings import *
 # EMAIL_HOST_PASSWORD = ''
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
+
+#django-crispy-forms.
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -13,6 +13,7 @@ class Order(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя',)
     email = models.EmailField()
     nomer = models.CharField(max_length=100, verbose_name='Номер ID')
+    telephone = models.CharField(max_length=100, verbose_name='Телефон')
     text = models.TextField(verbose_name='Сообщения',)
     date = models.DateTimeField(default=datetime.now, blank=True)
 

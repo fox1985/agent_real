@@ -51,6 +51,8 @@ class Listing(models.Model):
   vid_name = models.CharField(max_length=100, verbose_name=u'вид', help_text=u'Вид недвижимости на пример новострой',blank=True)
   tip_name = models.CharField(max_length=100, verbose_name=u'Тип', help_text=u'Тип недвижимость',blank=True)
   page_info = models.ManyToManyField(Info, verbose_name=u'Удобства',help_text=u'Что есть в доме',blank=True)
+  sale_and_rental = models.CharField(max_length=100, verbose_name='Для', help_text='Продажа или аренда',blank=True)
+  from_the_sea = models.IntegerField(verbose_name='от моря',default=0, blank=True)
   photo_main = models.ImageField(upload_to='photos-home/%Y/%m/%d/', verbose_name=u'карточтка товара')
   is_published = models.BooleanField(default=True, verbose_name=u'Опублековать')
   list_date = models.DateTimeField(default=datetime.now, blank=True)

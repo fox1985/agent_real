@@ -38,7 +38,7 @@ class Realty_PageUpdate(UpdateView,):
 
     success_url = '/listings/'
 
-    fields = ['realtor', 'title', 'address', 'city', 'state', 'zipcode', 'description', 'price', 'bedrooms',
+    fields = ['realtor', 'title', 'address','sale_and_rental',  'from_the_sea', 'city', 'state', 'zipcode', 'description', 'price', 'bedrooms',
                   'bathrooms', 'garage', 'sqft', 'lot_size', 'vid_name', 'tip_name', 'page_info', 'photo_main',  'is_published',]
 
 
