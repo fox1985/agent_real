@@ -112,14 +112,22 @@
 
                    <div class="col-md-6 col-lg-4 text-left">
                         <br>
+                        <!--Если поля пустое оно не выводится--->
+                       {% if listing.sale_and_rental %}
                         <span class="d-inline-block text-black mb-0 caption-text">Для</span>
                         <strong class="d-block">{{ listing.sale_and_rental }}</strong>
+                       {% endif %}
+                       <!--Если поля пустое оно не выводится--->
                     </div>
 
                     <div class="col-md-6 col-lg-4 text-left">
                         <br>
+                       <!--Если поля пустое оно не выводится--->
+                        {% if listing.from_the_sea %}
                         <span class="d-inline-block text-black mb-0 caption-text">От моря</span>
                         <strong class="d-block">{{ listing.from_the_sea }}m<sup></sup></strong>
+                        {% endif %}
+                         <!--Если поля пустое оно не выводится--->
                     </div>
 
 
