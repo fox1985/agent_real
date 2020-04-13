@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'order',
     'crispy_forms',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -164,3 +165,7 @@ from emailsettings import *
 
 #django-crispy-forms.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# https://django-simple-captcha.readthedocs.io/en/latest/index.html
+CAPTCHA_FONT_SIZE =  33;
+
