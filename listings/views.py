@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.core.mail import send_mail
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from listings.models import Listing, Category, Galary_image
 from django.contrib import auth
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
@@ -12,11 +13,15 @@ from django.core.urlresolvers import reverse
 # Create your views here.
 
 
-def listings(request):
+def listings(request, page_nober=1):
     """Главная страныица listings"""
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
     categorys = Category.objects.order_by('name').filter(is_published=True)
-    context = {'listings': listings, 'categorys': categorys}
+
+    paginator = Paginator(listings, 6)  # выводит сколько страници  должно быть до погинации
+
+
+    context = {'listings': paginator.page(page_nober), 'categorys': categorys}
     return render(request, 'listings/listings.html', context)
 
 
