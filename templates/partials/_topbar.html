@@ -18,8 +18,27 @@
             <p class="mb-0">
               <a href="#" class="mr-3"><span class="text-black fl-bigmug-line-phone351"></span> <span class="d-none d-md-inline-block ml-2">Tel 965 501 294</span></a>
               <a href="#"><span class="text-black fl-bigmug-line-email64"></span> <span class="d-none d-md-inline-block ml-2">es@torrehome.com</span></a>
+
+
+            <a href="#"><span class="d-none d-md-inline-block ml-3">
+                 {# проверка вошол лили пользователь #}
+                {% if not request.user.is_authenticated %}
+                    Здравствуйте, гость
+                {% else %}
+                     Здравствуйте, {{ request.user}}
+
+                {% endif %}
+                {# проверка вошол лили пользователь #}
+
+            </span></a>
+
+
+
             </p>
           </div>
+            <div>
+
+            </div>
           <div class="col-6 col-md-6 text-right">
             <a href="#" class="mr-3"><span class="text-black icon-facebook"></span></a>
             <a href="#" class="mr-3"><span class="text-black icon-twitter"></span></a>
