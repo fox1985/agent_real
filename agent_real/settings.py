@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'order',
     'crispy_forms',
     'captcha',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -168,4 +169,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # https://django-simple-captcha.readthedocs.io/en/latest/index.html
 CAPTCHA_FONT_SIZE =  33;
+
+"LOGIN_URL: URL для перенаправления пользователя на вход (например, представления с помощью декоратора login_required )"
+
+LOGIN_URL = 'login'
+
+#переход авторизацыи пользователя на главную стараницу
+LOGIN_REDIRECT_URL =  '/listings/'
 

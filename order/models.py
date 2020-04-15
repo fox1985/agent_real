@@ -15,7 +15,8 @@ class Order(models.Model):
     nomer = models.CharField(max_length=100, verbose_name='Номер ID')
     telephone = models.CharField(max_length=100, verbose_name='Телефон')
     text = models.TextField(verbose_name='Сообщения',)
-    date = models.DateTimeField(default=datetime.now, blank=True)
+    contact_date = models.DateTimeField(default=datetime.now, blank=True)
+
 
     class Meta:
         verbose_name = u'Заявка'
