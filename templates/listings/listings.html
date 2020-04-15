@@ -12,8 +12,8 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">
-              <i class="fas fa-home"></i> </a>
+            <a href="{% url 'logout' %}">
+              <i class="fas fa-home"></i></a>
           </li>
 
 
@@ -21,9 +21,7 @@
 
             <li class="breadcrumb-item">
                  {# Авторизированый пользователь да или нет #}
-
                 <a href="{% url 'new_page' %}">Добавить</a>
-
             </li>
 
         </ol>

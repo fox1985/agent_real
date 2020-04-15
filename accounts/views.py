@@ -30,6 +30,6 @@ def logout(request):
   if request.method == 'POST':
     auth.logout(request)
     messages.success(request, 'Вы вышли из системы')
-    return redirect('index')
+    return redirect('listings')
 
 
