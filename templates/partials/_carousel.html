@@ -6,7 +6,7 @@
 
         <div class="text">
           <h2>{{ listing.title }}</h2>
-          <p class="mb-2"><strong>${{ listing.price }}</strong></p>
+          <p class="mb-2"><strong>€{{ listing.price }}</strong></p>
           <p class="mb-0"><a href="{% url 'listing' listing.id %}" class="text-uppercase small letter-spacing-1 font-weight-bold">Подробнее</a></p>
 
         </div>

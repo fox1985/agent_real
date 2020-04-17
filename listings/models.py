@@ -13,8 +13,8 @@ class Category(models.Model):
 
   class Meta:
     db_table = 'category'
-    verbose_name = u'Катигории'
-    verbose_name_plural = u'Катигория'
+    verbose_name = u'Категори'
+    verbose_name_plural = u'Категория'
 
   def __unicode__(self):
     return self.name
@@ -37,13 +37,16 @@ class Listing(models.Model):
   realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
   title = models.CharField(max_length=200, verbose_name=u'Загаловак')
   category = models.ForeignKey(Category, verbose_name=u"Категория", on_delete=models.SET_NULL, null=True)
-  address = models.CharField(max_length=200, verbose_name=u'Адрес')
-  city = models.CharField(max_length=100, verbose_name=u'Город')
-  state = models.CharField(max_length=100, verbose_name=u'Состояние')
-  description = models.TextField(blank=True, verbose_name=u'Описание')
-  price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=u'цена')
-  bedrooms = models.IntegerField(verbose_name=u'спальни')
-  bathrooms = models.IntegerField(default=0, verbose_name=u'ванные комнаты')
+  address = models.CharField(max_length=200, verbose_name=u'Адрес', blank=True)
+  region = models.CharField(max_length=100, verbose_name='Регион',blank=True)
+  district = models.CharField(max_length=200, verbose_name=u'Район', blank=True)
+  rooms = models.IntegerField(verbose_name='Комнат',default=0)
+  city = models.CharField(max_length=100, verbose_name=u'Город', blank=True)
+  state = models.CharField(max_length=100, verbose_name=u'Состояние', blank=True)
+  description = models.TextField(blank=True, verbose_name=u'Описание',)
+  price = models.DecimalField(max_digits=10, decimal_places=3, verbose_name=u'цена')
+  bedrooms = models.IntegerField(verbose_name=u'спальни', blank=True)
+  bathrooms = models.IntegerField(default=0, verbose_name=u'ванные комнаты', blank=True)
   garage = models.IntegerField(default=0, verbose_name=u'гараж')
   sqft = models.IntegerField(default=0, verbose_name=u'Квадратные метры')
   lot_size = models.IntegerField(default=0, verbose_name=u'номер ID')
@@ -53,7 +56,7 @@ class Listing(models.Model):
   sale_and_rental = models.CharField(max_length=100, verbose_name='Для', help_text='Продажа или аренда',blank=True)
   from_the_sea = models.IntegerField(verbose_name='от моря',default=0, blank=True, help_text='если не нужно отмечать сколько от моря оставьте <<ноль>>')
   photo_main = models.ImageField(upload_to='photos-home/%Y/%m/%d/', verbose_name=u'карточтка товара')
-  is_published = models.BooleanField(default=True, verbose_name=u'Опублековать')
+  is_published = models.BooleanField(default=True, verbose_name=u'Опубликовать')
   list_date = models.DateTimeField(default=datetime.now, blank=True)
 
   def __unicode__(self):

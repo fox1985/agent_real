@@ -40,7 +40,7 @@
         <div class="row mb-5">
           <div class="col-12">
             <div class="site-section-title">
-              <h2>Новые свойства для вас</h2>
+              <h2>КАТАЛОГ НЕДВИЖИМОСТИ В ИСПАНИИ</h2>
             </div>
 
           </div>
@@ -63,20 +63,36 @@
                 <div class="prop-more-info">
                   <div class="inner d-flex">
                     <div class="col">
-                      <span>Площадь:</span>
-                      <strong>{{ listing.sqft }}m<sup>2</sup></strong>
+                        {% if listing.sqft %}
+                         <span>Площадь:</span>
+                         <strong>{{ listing.sqft }}м<sup>2</sup></strong>
+                        {% endif %}
                     </div>
                     <div class="col">
+                      {% if listing.bedrooms %}
                       <span>Спальни:</span>
                       <strong>{{ listing.bedrooms }}</strong>
+                      {% endif %}
                     </div>
                     <div class="col">
+                        {% if listing.bathrooms %}
                       <span>Ванны:</span>
                       <strong>{{ listing.bathrooms }}</strong>
+                        {% endif %}
                     </div>
+
                     <div class="col">
+                     {% if listing.garage %}
                       <span>Гаражи:</span>
                       <strong>{{ listing.garage }}</strong>
+                     {% endif %}
+                    </div>
+
+                   <div class="col">
+                     {% if listing.rooms%}
+                      <span>Комнат:</span>
+                      <strong>{{ listing.rooms }}</strong>
+                     {% endif %}
                     </div>
                   </div>
                 </div>
