@@ -1,12 +1,13 @@
 <div class="py-5">
       <div class="container">
           {#  поиск  #}
-        <form class="row mb-5" action="" method="get">
+        <form class="row mb-5" action="{% url 'search' %}" method="get">
+
 
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
+              <select name="q" id="q" class="form-control d-block rounded-0">
                 <option value="">ОТ МОРЯ</option>
                 <option value="1000">1000</option>
                 <option value="800">800</option>
@@ -20,17 +21,17 @@
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
+              <select name="q" id="q" class="form-control d-block rounded-0">
                 <option value="">Статус недвижимости</option>
                 <option value="For Sale">Продается</option>
-                <option value="For Rent">В аренду</option>
+                <option value="For Rent">аренда</option>
               </select>
             </div>
           </div>
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
+              <select name="q" id="q" class="form-control d-block rounded-0">
                 <option value="">Location</option>
                 <option value="United States">Соединенные Штаты</option>
                 <option value="United Kingdom">объединенное Королевство</option>
@@ -42,7 +43,7 @@
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
+              <select name="q" id="q" class="form-control d-block rounded-0">
                 <option value="">Площадь участка</option>
                 <option value="1000">1000</option>
                 <option value="800">800</option>
@@ -53,10 +54,11 @@
               </select>
             </div>
           </div>
+
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
+              <select name="q" id="q" class="form-control d-block rounded-0">
                 <option value="">спальни</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -66,10 +68,25 @@
               </select>
             </div>
           </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+              <select name="q" id="q" class="form-control d-block rounded-0">
+                <option value="">Комнат</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+              </select>
+            </div>
+          </div>
+
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
+              <select name="q" id="q" class="form-control d-block rounded-0">
                 <option value="">В ванных комнатах</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
