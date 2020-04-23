@@ -38,8 +38,8 @@ class Listing(models.Model):
   title = models.CharField(max_length=200, verbose_name=u'Загаловак')
   category = models.ForeignKey(Category, verbose_name=u"Категория", on_delete=models.SET_NULL, null=True)
   address = models.CharField(max_length=200, verbose_name=u'Адрес', blank=True)
-  region = models.CharField(max_length=100, verbose_name='Регион',blank=True)
   district = models.CharField(max_length=200, verbose_name=u'Район', blank=True)
+  region = models.CharField(max_length=100, verbose_name='Регион',blank=True)
   rooms = models.IntegerField(verbose_name='Комнат',default=0)
   city = models.CharField(max_length=100, verbose_name=u'Город', blank=True)
   state = models.CharField(max_length=100, verbose_name=u'Состояние', blank=True)
@@ -49,7 +49,9 @@ class Listing(models.Model):
   bathrooms = models.IntegerField(default=0, verbose_name=u'ванные комнаты', blank=True)
   garage = models.IntegerField(default=0, verbose_name=u'гараж')
   sqft = models.IntegerField(default=0, verbose_name=u'Квадратные метры')
-  lot_size = models.IntegerField(default=0, verbose_name=u'номер ID')
+  land_area = models.IntegerField(default=0, verbose_name=u'площадь участка')
+  terrace_area = models.IntegerField(default=0, verbose_name=u'площадь террасы')
+  lot_size = models.CharField(max_length=200, verbose_name=u'номер ID')
   vid_name = models.CharField(max_length=100, verbose_name=u'вид', help_text=u'Вид недвижимости на пример новострой',blank=True)
   tip_name = models.CharField(max_length=100, verbose_name=u'Тип', help_text=u'Тип недвижимость',blank=True)
   page_info = models.ManyToManyField(Info, verbose_name=u'Удобства',help_text=u'Что есть в доме',blank=True)
@@ -66,6 +68,7 @@ class Listing(models.Model):
     db_table = 'listing'
     verbose_name = u'Объявления'
     verbose_name_plural = u'Объявлени'
+
 
 
 
