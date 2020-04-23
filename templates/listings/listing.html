@@ -84,12 +84,6 @@
                       {% endif %}
                   </li>
 
-                      <li>
-                          {% if listing.region %}
-                          <span class="property-specs">Регион:</span>
-                          <span class="property-specs-number">{{ listing.region }}</span>
-                          {% endif %}
-                      </li>
 
 
                       <li>
@@ -98,6 +92,14 @@
                           <span class="property-specs-number">{{ listing.city }}</span>
                           {% endif %}
                       </li>
+
+                      <li>
+                          {% if listing.region %}
+                          <span class="property-specs">Регион:</span>
+                          <span class="property-specs-number">{{ listing.region }}</span>
+                          {% endif %}
+                      </li>
+
 
 
                        <li>
@@ -179,14 +181,17 @@
                     </div>
 
 
-               <div class="col-md-6 col-lg-12 text-left border-top border-top py-3">
-                             <!--Если поля пустое оно не выводится-->
+
+                   <div class="col-md-6 col-lg-12 text-left border-top border-top py-3 ">
+                        <br>
+                       <!--Если поля пустое оно не выводится--->
                         {% if listing.terrace_area %}
                         <span class="d-inline-block text-black mb-0 caption-text">площадь террасы</span>
-                        <strong class="d-block">{{ listing.terrace_area }}м<sup>2</sup></strong>
+                        <strong class="d-block">{{ listing.terrace_area }}м<sup></sup></strong>
                         {% endif %}
-                         <!--Если поля пустое оно не выводится-->
-                  </div>
+                         <!--Если поля пустое оно не выводится--->
+                    </div>
+
 
               </div>
 
