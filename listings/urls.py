@@ -36,6 +36,6 @@ urlpatterns = [
 
     url(r'^listing/(?P<listing_id>\d+)/edit/$', edit.Realty_PageUpdate.as_view(), name='edit_page'),# редактировать товар
 
-    url(r'^search/', views.SearchListView.as_view(), name='search')
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

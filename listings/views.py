@@ -11,6 +11,7 @@ from order.forms import OrderForm
 from django.core.urlresolvers import reverse
 from django.views.generic.list import ListView
 from django.db.models import Q
+from django.contrib.postgres.search import SearchVector
 
 # Create your views here.
 
@@ -87,18 +88,3 @@ def listing(request, listing_id):
 
   return render(request, 'listings/listing.html', context)
 
-
-
-class SearchListView(ListView):
-    model = Listing
-    template_name = 'pages/index.html'
-    context_object_name = 'listings'
-
-    def get_queryset(self):
-      # Получаем не отфильтрованный кверисет всех моделей
-      queryset = Listing.objects.all()
-      q = self.request.GET.get("q")
-      if q:
-        # Если 'q' в GET запросе, фильтруем кверисет по данным из 'q'
-        return queryset.filter(Q(bathrooms=q), Q(rooms=q))
-      return queryset
