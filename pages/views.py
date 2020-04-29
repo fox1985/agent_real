@@ -17,6 +17,6 @@ class SearchResultsView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         object_list = Listing.objects.filter(
-            Q(bedrooms__contains=query) | Q(rooms__icontains=query)
+            Q(bathrooms__contains=query) | Q(rooms__icontains=query)
         )
         return object_list

@@ -24,6 +24,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     url(r'^search/', views.SearchResultsView.as_view(), name='search_results'),
-    url(r'^$', views.HomePageView.as_view(), name='home'),
+    url(r'listings/^$', views.HomePageView.as_view(), name='home'),
 
 ]
