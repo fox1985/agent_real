@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db.models import Q
 from django.shortcuts import render
-from listings.forms import HousesFilterForm
+from search.forms import HousesFilterForm
 from listings.models import Listing, Category
 
 
