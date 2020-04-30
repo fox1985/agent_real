@@ -40,15 +40,11 @@ def search_form(request):
 
 
         if housesform.cleaned_data['sale_and_rental']:
-            'Продажа или аренда Больше или равно'
-            listings = listings.filter(sale_and_rental__icontains=housesform.cleaned_data['sale_and_rental'])
+            'Продажа или аренда'
+            listings = listings.filter(sale_and_rental=housesform.cleaned_data['sale_and_rental'])
 
 
 
-
-        if housesform.cleaned_data['sale_and_rental']:
-            'Продажа или аренда Больше или равно'
-            listings = listings.filter(sale_and_rental__icontains=housesform.cleaned_data['sale_and_rental'])
 
 #-----------------------------------------------------------------------------------------------------------------------
 
