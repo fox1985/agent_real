@@ -35,5 +35,7 @@ urlpatterns = [
 
     url(r'^', include('pages.urls')),
 
+    url(r'^', include('search.urls')),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
