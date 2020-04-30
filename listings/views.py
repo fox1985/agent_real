@@ -6,12 +6,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from listings.models import Listing, Category, Galary_image
 from django.contrib import auth
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from .choices import price_choices, bedroom_choices, state_choices
 from order.forms import OrderForm
 from django.core.urlresolvers import reverse
-from django.views.generic.list import ListView
-from django.db.models import Q
-from django.contrib.postgres.search import SearchVector
 
 # Create your views here.
 

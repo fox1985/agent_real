@@ -4,6 +4,8 @@
 {% load humanize %}
 
   {% block content %}
+       <!--Поиск--->
+    {% include 'listings/search.html' %}
 
       <!-- Breadcrumb -->
 {% if request.user.is_authenticated %}

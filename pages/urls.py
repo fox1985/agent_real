@@ -23,7 +23,5 @@ from django.conf.urls import url
 
 
 urlpatterns = [
-    url(r'^search/', views.SearchResultsView.as_view(), name='search_results'),
-    url(r'listings/^$', views.HomePageView.as_view(), name='home'),
-
+    url(r'^search/', views.search_form, name='search_results'),
 ]
