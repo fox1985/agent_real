@@ -43,9 +43,7 @@ def search_form(request):
             'Продажа или аренда Больше или равно'
             listings = listings.filter(sale_and_rental__icontains=housesform.cleaned_data['sale_and_rental'])
 
-        if housesform.cleaned_data['bathrooms']:
-            'ванные комнаты меньше или равно'
-            listings = listings.filter(bathrooms__lte=housesform.cleaned_data['bathrooms'])
+
 
 
         if housesform.cleaned_data['sale_and_rental']:
@@ -63,7 +61,15 @@ def search_form(request):
             listings = listings.filter(sqft__lte=housesform.cleaned_data['sqft'])
 #-----------------------------------------------------------------------------------------------------------------------
 
+        if housesform.cleaned_data['bedrooms']:
+            'спальни больше или равно'
+            listings = listings.filter(bedrooms__gte=housesform.cleaned_data['bedrooms'])
 
+
+
+        if housesform.cleaned_data['bedrooms']:
+            'спальни менше или равно'
+            listings = listings.filter(bedrooms__lte=housesform.cleaned_data['bedrooms'])
 
 
     context = {'listings': listings, 'categorys': categorys, 'housesform': housesform}
