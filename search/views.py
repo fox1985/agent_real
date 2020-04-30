@@ -26,24 +26,10 @@ def search_form(request):
             'Если комнат Больше или равно'
             listings = listings.filter(rooms__gte=housesform.cleaned_data['rooms'])
 
-        if housesform.cleaned_data['rooms']:
-            'Если комнат меньше или равно'
-            listings = listings.filter(rooms__gte=housesform.cleaned_data['rooms'])
-
-        if housesform.cleaned_data['bathrooms']:
-            'ванные комнаты Больше или равно'
-            listings = listings.filter(bathrooms__gte=housesform.cleaned_data['bathrooms'])
 
         if housesform.cleaned_data['bathrooms']:
             'ванные комнаты меньше или равно'
             listings = listings.filter(bathrooms__lte=housesform.cleaned_data['bathrooms'])
-
-
-        if housesform.cleaned_data['sale_and_rental']:
-            'Продажа или аренда'
-            listings = listings.filter(sale_and_rental=housesform.cleaned_data['sale_and_rental'])
-
-
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -66,6 +52,18 @@ def search_form(request):
         if housesform.cleaned_data['bedrooms']:
             'спальни менше или равно'
             listings = listings.filter(bedrooms__lte=housesform.cleaned_data['bedrooms'])
+#---------------------------------------------------------------------------------------------------------------------
+
+        if housesform.cleaned_data['city']:
+            'Город'
+            listings = listings.filter(city__gte=housesform.cleaned_data['city'])
+
+#---------------------------------------------------------------------------------------------------------------------
+
+        if housesform.cleaned_data['vid_name']:
+            'Вид недвижимости'
+            listings = listings.filter(city__gte=housesform.cleaned_data['vid_name'])
+
 
 
     context = {'listings': listings, 'categorys': categorys, 'housesform': housesform}
