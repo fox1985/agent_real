@@ -60,9 +60,9 @@ def search_form(request):
 
 #---------------------------------------------------------------------------------------------------------------------
 
-        if housesform.cleaned_data['vid_name']:
+        if housesform.cleaned_data['title']:
             'Вид недвижимости'
-            listings = listings.filter(city__icontains=housesform.cleaned_data['vid_name'])
+            listings = listings.filter(title__icontains=housesform.cleaned_data['title'])
 
 
 
