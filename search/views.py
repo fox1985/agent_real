@@ -22,15 +22,6 @@ def search_form(request):
             'Меньше или равно'
             listings = listings.filter(price__lte=housesform.cleaned_data['max_price'])
 
-        if housesform.cleaned_data['rooms']:
-            'Если комнат Больше или равно'
-            listings = listings.filter(rooms__gte=housesform.cleaned_data['rooms'])
-
-
-        if housesform.cleaned_data['bathrooms']:
-            'ванные комнаты меньше или равно'
-            listings = listings.filter(bathrooms__lte=housesform.cleaned_data['bathrooms'])
-
 
 #-----------------------------------------------------------------------------------------------------------------------
 
