@@ -56,13 +56,13 @@ def search_form(request):
 
         if housesform.cleaned_data['city']:
             'Город'
-            listings = listings.filter(city__gte=housesform.cleaned_data['city'])
+            listings = listings.filter(city__icontains=housesform.cleaned_data['city'])
 
 #---------------------------------------------------------------------------------------------------------------------
 
         if housesform.cleaned_data['vid_name']:
             'Вид недвижимости'
-            listings = listings.filter(city__gte=housesform.cleaned_data['vid_name'])
+            listings = listings.filter(city__icontains=housesform.cleaned_data['vid_name'])
 
 
 
