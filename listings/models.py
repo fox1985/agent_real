@@ -44,7 +44,7 @@ class Listing(models.Model):
   city = models.CharField(max_length=100, verbose_name=u'Город', blank=True)
   state = models.CharField(max_length=100, verbose_name=u'Состояние', blank=True)
   description = models.TextField(blank=True, verbose_name=u'Описание',)
-  price = models.DecimalField(max_digits=10, decimal_places=3, verbose_name=u'цена')
+  price = models.CharField(max_length=200, verbose_name=u'цена')
   bedrooms = models.IntegerField(verbose_name=u'спальни', blank=True)
   bathrooms = models.IntegerField(default=0, verbose_name=u'ванные комнаты', blank=True)
   garage = models.IntegerField(default=0, verbose_name=u'гараж')
