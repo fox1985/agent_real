@@ -15,12 +15,12 @@ def search_form(request):
     housesform = HousesFilterForm(request.GET)
     if housesform.is_valid():
         if housesform.cleaned_data['min_price']:
-            'Меньше или равно'
-            listings = listings.filter(price__lte=housesform.cleaned_data['min_price'])
+            'Больше или равно'
+            listings = listings.filter(price__gte=housesform.cleaned_data['min_price'])
 
         if housesform.cleaned_data['max_price']:
-            'Больше или равно'
-            listings = listings.filter(price__gte=housesform.cleaned_data['max_price'])
+            'Меньше или равно'
+            listings = listings.filter(price__lte=housesform.cleaned_data['max_price'])
 
 
 #-----------------------------------------------------------------------------------------------------------------------

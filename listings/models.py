@@ -49,7 +49,7 @@ class Listing(models.Model):
   bathrooms = models.IntegerField(default=0, verbose_name=u'ванные комнаты', blank=True)
   garage = models.IntegerField(default=0, verbose_name=u'гараж')
   sqft = models.IntegerField(default=0, verbose_name=u'Квадратные метры')
-  land_area = models.IntegerField(default=0, verbose_name=u'площадь участка')
+  land_area = models.CharField( verbose_name=u'площадь участка',max_length=200, blank=True)
   terrace_area = models.IntegerField(default=0, verbose_name=u'площадь террасы')
   lot_size = models.CharField(max_length=200, verbose_name=u'номер ID')
   vid_name = models.CharField(max_length=100, verbose_name=u'вид', help_text=u'Вид недвижимости на пример новострой',blank=True)

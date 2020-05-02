@@ -9,17 +9,10 @@
                     <span class="icon icon-arrow_drop_down"></span>
                     <select name="sqft"  class="form-control d-block rounded-0">
                     <option value="">Площадь участка</option>
-                    <option value="1000">1000</option>
-                    <option value="800">800</option>
-                    <option value="600">600</option>
-                    <option value="400">400</option>
-                      <option value="300">300</option>
-                    <option value="200">200</option>
-                    <option value="100">100</option>
-                      <option value="50">50</option>
-                       <option value="57">57</option>
-                       <option value="40">40</option>
-                       <option value="86">86</option>
+                          {% for listing in listings %}
+                              <option value="{{ listing.sqft }}">{{ listing.sqft }}</option>
+                        {% endfor %}
+
                     </select>
             </div>
           </div>
@@ -86,7 +79,7 @@
               <span class="icon icon-arrow_drop_down"></span>
 
               <select name="min_price"  class="form-control d-block rounded-0">
-              <option value="">от</option>
+              <option value="">цена от</option>
                     {% for listing in listings %}
                         <option value="{{ listing.price }}">{{ listing.price }}</option>
                     {% endfor %}
@@ -102,7 +95,7 @@
               <span class="icon icon-arrow_drop_down"></span>
 
               <select name="max_price"  class="form-control d-block rounded-0">
-              <option value="">До</option>
+              <option value="">цена до</option>
                     {% for listing in listings %}
                         <option value="{{ listing.price }}">{{ listing.price }}</option>
                     {% endfor %}
