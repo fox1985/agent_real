@@ -3,6 +3,65 @@
           {#  поиск  #}
         <form class="row mb-5" action="{% url 'search_results' %}" method="get">
 
+
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="select-wrap">
+                    <span class="icon icon-arrow_drop_down"></span>
+                    <select name="sqft"  class="form-control d-block rounded-0">
+                    <option value="">Площадь участка</option>
+                    <option value="1000">1000</option>
+                    <option value="800">800</option>
+                    <option value="600">600</option>
+                    <option value="400">400</option>
+                      <option value="300">300</option>
+                    <option value="200">200</option>
+                    <option value="100">100</option>
+                      <option value="50">50</option>
+                       <option value="57">57</option>
+                       <option value="40">40</option>
+                       <option value="86">86</option>
+                    </select>
+            </div>
+          </div>
+
+
+
+
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+              <select name="title"  class="form-control d-block rounded-0">
+                <option value="">Вид недвижимости</option>
+                <option value="Аренда">Аренда</option>
+                <option value="НОВОСТРОЙ">НОВОСТРОЙ</option>
+                  <option value="Коста бланка">Коста бланка</option>
+                  <option value="Инвестиции">Инвестиции</option>
+                  <option value="Квартиры">Квартиры</option>
+                  <option value="Бунгало">Бунгало</option>
+                  <option value="Виллы">Виллы</option>
+                  <option value="Таунхаус">Таунхаус</option>
+                  <option value="Дома">Дома</option>
+              </select>
+            </div>
+          </div>
+
+
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+              <select name="bathrooms"  class="form-control d-block rounded-0">
+                <option value="">Санузел</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5</option>
+              </select>
+            </div>
+          </div>
+
+
+
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
@@ -32,26 +91,7 @@
                 </div>
           </div>
 
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="select-wrap">
-              <span class="icon icon-arrow_drop_down"></span>
-              <select name="sqft"  class="form-control d-block rounded-0">
-                <option value="">Площадь участка</option>
-                <option value="1000">1000</option>
-                <option value="800">800</option>
-                <option value="600">600</option>
-                <option value="400">400</option>
-                  <option value="300">300</option>
-                <option value="200">200</option>
-                <option value="100">100</option>
-                  <option value="50">50</option>
-                   <option value="57">57</option>
-                   <option value="40">40</option>
-                   <option value="86">86</option>
 
-              </select>
-            </div>
-          </div>
 
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
@@ -67,39 +107,11 @@
             </div>
           </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="select-wrap">
-              <span class="icon icon-arrow_drop_down"></span>
-              <select name="title"  class="form-control d-block rounded-0">
-                <option value="">Вид недвижимости</option>
-                <option value="Аренда">Аренда</option>
-                <option value="НОВОСТРОЙ">НОВОСТРОЙ</option>
-                  <option value="Коста бланка">Коста бланка</option>
-                  <option value="Инвестиции">Инвестиции</option>
-                  <option value="Квартиры">Квартиры</option>
-                  <option value="Бунгало">Бунгало</option>
-                  <option value="Виллы">Виллы</option>
-                  <option value="Таунхаус">Таунхаус</option>
-                  <option value="Дома">Дома</option>
-              </select>
-            </div>
-          </div>
 
 
 
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="select-wrap">
-              <span class="icon icon-arrow_drop_down"></span>
-              <select name="bathrooms"  class="form-control d-block rounded-0">
-                <option value="">Санузел</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5+">5</option>
-              </select>
-            </div>
-          </div>
+
+
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
               <div class="mb-4">
 
