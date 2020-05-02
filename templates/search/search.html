@@ -79,16 +79,36 @@
             </div>
           </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+
+
+         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
-              <input type="text" name="min_price" class="form-control" placeholder="цена от">
+              <span class="icon icon-arrow_drop_down"></span>
+
+              <select name="min_price"  class="form-control d-block rounded-0">
+              <option value="">от</option>
+                    {% for listing in listings %}
+                        <option value="{{ listing.price }}">{{ listing.price }}</option>
+                    {% endfor %}
+              </select>
+
             </div>
           </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="select-wrap">
-                    <input type="text" name="max_price" class="form-control" placeholder="цена до">
-                </div>
+
+
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+
+              <select name="max_price"  class="form-control d-block rounded-0">
+              <option value="">До</option>
+                    {% for listing in listings %}
+                        <option value="{{ listing.price }}">{{ listing.price }}</option>
+                    {% endfor %}
+              </select>
+
+            </div>
           </div>
 
 

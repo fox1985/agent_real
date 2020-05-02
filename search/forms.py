@@ -7,8 +7,8 @@ class HousesFilterForm(forms.Form):
     required=False поля не обезательно для запланения
     """
     title = forms.CharField(label='Загаловак', max_length=200, required=False, )
-    min_price = forms.DecimalField(label="цена от", required=False, max_digits=10, decimal_places=3,)
-    max_price = forms.DecimalField(label="цена до", required=False, max_digits=10, decimal_places=3,)
+    min_price = forms.CharField(label="цена от", required=False, max_length=200)
+    max_price = forms.CharField(label="цена до", required=False, max_length=200,)
     rooms = forms.IntegerField(label='Комнат', required=False, )
     bathrooms = forms.IntegerField(label='Санузел', required=False,)
     bedrooms = forms.IntegerField(label='спальни', required=False, )
