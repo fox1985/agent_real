@@ -15,12 +15,8 @@ from django.core.urlresolvers import reverse
 def listings(request, page_nober=1):
     """Главная страныица listings"""
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
-    categorys = Category.objects.order_by('name').filter(is_published=True)
-
     paginator = Paginator(listings, 6)  # выводит сколько страници  должно быть до погинации
-
-
-    context = {'listings': paginator.page(page_nober), 'categorys': categorys}
+    context = {'listings': paginator.page(page_nober),}
     return render(request, 'listings/listings.html', context)
 
 
@@ -44,12 +40,6 @@ def category_page(request, cat_id):
 
     context_dict['galary_image'] = Galary_image.objects.filter(pk=cat_id)  # Филтует галирею изображений
 
-
-
-    categorys = Category.objects.order_by('name').filter(is_published=True)
-
-    context_dict['categorys'] = categorys # для вывода меню на в файле category.html
-
     context_dict['username'] = auth.get_user(request).username  # Афторизация пользователя
 
 
@@ -62,7 +52,6 @@ def category_page(request, cat_id):
 def listing(request, listing_id):
   """Страница listing"""
   listing = get_object_or_404(Listing, pk=listing_id)
-  categorys = Category.objects.order_by('name').filter(is_published=True)
   form = OrderForm(request.POST or None, initial={'listing': listing} )
 
   if request.method == "POST":
@@ -77,7 +66,6 @@ def listing(request, listing_id):
 
   context = {
     'listing': listing,
-    'categorys': categorys,
     'form' : form,
     'sended': request.GET.get("sended", False)
   }

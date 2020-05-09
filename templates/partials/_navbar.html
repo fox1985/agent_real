@@ -1,3 +1,5 @@
+{# тэк для вызоба категории #}
+{% load listings_tag  %}
 
 <div class="site-navbar">
         <div class="container py-1">
@@ -21,6 +23,8 @@
 
 
                     <ul class="dropdown">
+                    {# Вызов самодельный теэг для вывода меню категории на всех страницах  #}
+                    {% get_categories as categorys %}
                     {% for category in categorys %}
                       <li><a href="{% url 'category_page' category.pk %}">{{ category.name }}</a></li>
 
