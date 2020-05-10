@@ -52,7 +52,7 @@
             {% if listings %}
              {% for listing in listings %}
           <div class="col-md-6 col-lg-4 mb-4">
-            <a href="{% url 'listing' listing.id %}" class="prop-entry d-block">
+            <a href="{{ listing.get_absolute_url }}" class="prop-entry d-block">
               <figure>
                 <img src="{{ listing.photo_main.url }}" alt="Image" class="img-fluid">
               </figure>

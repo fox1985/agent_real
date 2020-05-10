@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.urls import reverse
 from django.db import models
 from datetime import datetime
 from realtors.models import Realtor
@@ -18,6 +18,9 @@ class Category(models.Model):
 
   def __unicode__(self):
     return self.name
+
+  def get_absolute_url(self):
+    return reverse('category_page', kwargs={"cat_id": self.pk})
 
 
 class Info(models.Model):
@@ -64,10 +67,14 @@ class Listing(models.Model):
   def __unicode__(self):
     return self.title
 
+  def get_absolute_url(self):
+    return reverse('listing', kwargs={"listing_id": self.pk})
+
   class Meta:
     db_table = 'listing'
     verbose_name = u'Объявления'
     verbose_name_plural = u'Объявлени'
+
 
 
 
