@@ -3,24 +3,7 @@
           {#  поиск  #}
         <form class="row mb-5" action="{% url 'search_results' %}" method="get">
 
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="select-wrap">
-                    <span class="icon icon-arrow_drop_down"></span>
-                    <select name="sqft"  class="form-control d-block rounded-0">
-                    <option value="">Площадь участка</option>
-                          {% for listing in listings %}
-                              <option value="{{ listing.sqft }}">{{ listing.sqft }}</option>
-                        {% endfor %}
-
-                    </select>
-            </div>
-          </div>
-
-
-
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
               <select name="title"  class="form-control d-block rounded-0">
@@ -38,24 +21,7 @@
             </div>
           </div>
 
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="select-wrap">
-              <span class="icon icon-arrow_drop_down"></span>
-              <select name="bathrooms"  class="form-control d-block rounded-0">
-                <option value="">Санузел</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5+">5</option>
-              </select>
-            </div>
-          </div>
-
-
-
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
               <select name="city"  class="form-control d-block rounded-0">
@@ -73,8 +39,36 @@
           </div>
 
 
-
          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+              <select name="bedrooms"  class="form-control d-block rounded-0">
+                <option value="">спальни</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+              <select name="bathrooms"  class="form-control d-block rounded-0">
+                <option value="">Санузел</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5</option>
+              </select>
+            </div>
+          </div>
+
+           <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
 
@@ -106,19 +100,26 @@
 
 
 
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="select-wrap">
-              <span class="icon icon-arrow_drop_down"></span>
-              <select name="bedrooms"  class="form-control d-block rounded-0">
-                <option value="">спальни</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5+">5</option>
-              </select>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="select-wrap">
+                    <span class="icon icon-arrow_drop_down"></span>
+                    <select name="sqft"  class="form-control d-block rounded-0">
+                    <option value="">Площадь участка</option>
+                          {% for listing in listings %}
+                              <option value="{{ listing.sqft }}">{{ listing.sqft }}</option>
+                        {% endfor %}
+
+                    </select>
             </div>
           </div>
+
+
+
+
+
+
+
+
 
 
 
