@@ -13,7 +13,7 @@
               {% endfor %}
 
                 {% if listings.has_next %}
-                   <a href="/page/{{ listings.next_page_number }}">&raquo;</a>
+                   <a href="?page={{ listings.next_page_number }}">&raquo;</a>
 
                 {% else %}
 
