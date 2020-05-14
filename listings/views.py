@@ -12,11 +12,22 @@ from django.core.urlresolvers import reverse
 # Create your views here.
 
 
-def listings(request, page_nober=1):
+def listings(request,):
     """Главная страныица listings"""
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
     paginator = Paginator(listings, 6)  # выводит сколько страници  должно быть до погинации
-    context = {'listings': paginator.page(page_nober),}
+    # подключиение пагинацыи
+    page = request.GET.get('page')
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+      page_obj = paginator.page(paginator.num_pages)
+
+    context = {'listings': page_obj,}
     return render(request, 'listings/listings.html', context)
 
 
@@ -29,22 +40,35 @@ def category_page(request, cat_id):
     5 выводить страницы через словарь
   """
   context_dict = {}
+
+
+  category = Category.objects.get(pk=cat_id)  # выбрать одну категорию
+
+  context_dict['category_name'] = category.name  # Вытошеть имя категории
+
+  listings = Listing.objects.filter(category=category).prefetch_related('galary_image_set').all()
+
+  paginator = Paginator(listings, 6)  # выводит сколько страници  должно быть до погинации
+
+  # подключиение пагинацыи
+  page = request.GET.get('page')
   try:
+    page_obj = paginator.page(page)
+  except PageNotAnInteger:
 
-    category = Category.objects.get(pk=cat_id)  # выбрать одну категорию
-    context_dict['category_name'] = category.name  # Вытошеть имя категории
+    page_obj = paginator.page(1)
+  except EmptyPage:
 
-    listings = Listing.objects.filter(category=category).prefetch_related('galary_image_set').all()
+    page_obj = paginator.page(paginator.num_pages)
+  # подключиение пагинацыи
 
-    context_dict['listings'] = listings  # для вывода страницы
+  context_dict['listings'] = page_obj  # для вывода страницы
 
-    context_dict['galary_image'] = Galary_image.objects.filter(pk=cat_id)  # Филтует галирею изображений
+  context_dict['galary_image'] = Galary_image.objects.filter(pk=cat_id)  # Филтует галирею изображений
 
-    context_dict['username'] = auth.get_user(request).username  # Афторизация пользователя
+  context_dict['username'] = auth.get_user(request).username  # Афторизация пользователя
 
 
-  except Category.DoesNotExist:
-    pass
 
   return render(request, 'listings/category.html', context_dict)
 

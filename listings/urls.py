@@ -29,8 +29,6 @@ urlpatterns = [
     url(r'^category/(?P<cat_id>\d+)/$', views.category_page, name='category_page'),#Выборка категорий
     url(r'^listing/(?P<listing_id>\d+)/$', views.listing, name='listing'),
 
-    url(r'^page/(\d+)/$',  views.listings, name='listings'),# пагинацыя
-
     url(r'^add/$', edit.Form_Galary_View.as_view(), name="new_page"),# Добавить товар
 
 

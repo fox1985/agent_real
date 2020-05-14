@@ -6,9 +6,9 @@
         <div class="site-pagination">
               {% for page in listings.paginator.page_range  %}
                   {% if page == listings.number %}
-                   <a href="/page/{{ page }}" class="active">{{ page }}</a>
+                   <a href="?page={{ page }}" class="active">{{ page }}</a>
                   {% else %}
-                      <a href="/page/{{ page }}">{{ page }}</a>
+                      <a href="?page={{ page }}">{{ page }}</a>
                   {% endif %}
               {% endfor %}
 
@@ -27,3 +27,5 @@
 
 </div>
 </div>
+
+
