@@ -10,7 +10,7 @@ class Form_Galary_View(FormView):
     """Добавления товара через форму"""
     form_class = Form_Listing
     template_name = 'edit/new_page.html'
-    success_url = '/listings/'  # переадресация на страницу в случае успешной отправки
+    success_url = '/'  # переадресация на страницу в случае успешной отправки
 
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
