@@ -25,7 +25,7 @@ from . import views
 from . import  edit
 
 urlpatterns = [
-    url(r'^listings/', views.listings, name='listings'),
+    url(r'^$', views.listings, name='listings'),
     url(r'^category/(?P<cat_id>\d+)/$', views.category_page, name='category_page'),#Выборка категорий
     url(r'^listing/(?P<listing_id>\d+)/$', views.listing, name='listing'),
 
