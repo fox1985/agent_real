@@ -12,5 +12,12 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ['listing', 'name', 'email', 'nomer', 'telephone', 'text', 'captcha']
         widgets = {
-            'text': Textarea(attrs={'cols': 25, 'rows': 5}),
+            'name': forms.TextInput(attrs={"class": "form-control"}),
+            'email': forms.EmailInput(attrs={"class": "form-control"}),
+            'nomer': forms.TextInput(attrs={"class": "form-control"}),
+            'telephone': forms.TextInput(attrs={"class": "form-control"}),
+            'text': Textarea(attrs={'cols': 25, 'rows': 5, "class": "form-control", "style": 'margin-top: 0px; margin-bottom: 0px; height: 200px;'}),
         }
+
+
+#"style": 'margin-top: 0px; margin-bottom: 0px; height: 150px;'
