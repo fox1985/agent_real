@@ -170,7 +170,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # https://django-simple-captcha.readthedocs.io/en/latest/index.html
 CAPTCHA_FONT_SIZE =  33;
-
+#цвет букв капчи
 CAPTCHA_FOREGROUND_COLOR = '#f8a65c'
 
 "LOGIN_URL: URL для перенаправления пользователя на вход (например, представления с помощью декоратора login_required )"
