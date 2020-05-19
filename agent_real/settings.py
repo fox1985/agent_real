@@ -173,6 +173,7 @@ CAPTCHA_FONT_SIZE =  33;
 #цвет букв капчи
 CAPTCHA_FOREGROUND_COLOR = '#f8a65c'
 
+
 "LOGIN_URL: URL для перенаправления пользователя на вход (например, представления с помощью декоратора login_required )"
 
 LOGIN_URL = 'login'
