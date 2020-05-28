@@ -51,12 +51,12 @@ def search_form(request):
 
 #---------------------------------------------------------------------------------------------------------------------
 
-        if housesform.cleaned_data['title']:
+        if housesform.cleaned_data['category']:
             'Вид недвижимости'
-            listings = listings.filter(title__icontains=housesform.cleaned_data['title'])
+            listings = listings.filter(category__name=housesform.cleaned_data['category'])
 
 
 
-    context = {'listings': listings, 'categorys': categorys, 'housesform': housesform}
+    context = {'listings': listings, 'category': categorys, 'housesform': housesform}
     return render(request, 'listings/listings.html', context)
 
