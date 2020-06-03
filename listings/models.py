@@ -63,6 +63,8 @@ class Listing(models.Model):
   photo_main = models.ImageField(upload_to='photos-home/%Y/%m/%d/', verbose_name=u'карточтка товара')
   is_published = models.BooleanField(default=True, verbose_name=u'Опубликовать')
   list_date = models.DateTimeField(default=datetime.now, blank=True)
+  keywords = models.TextField(verbose_name="Ключивые слова", help_text='Ключивые слова для поиска Яндекс и googla слова добавлет через запятую',blank=True)
+
 
   def __unicode__(self):
     return self.title
