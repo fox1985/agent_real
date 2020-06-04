@@ -9,7 +9,7 @@ class Form_Listing(forms.ModelForm):
     class Meta:
         model = Listing
         fields = ['realtor', 'category', 'title',  'address', 'district', 'region', 'rooms', 'sale_and_rental',  'from_the_sea', 'city', 'state', 'description', 'price', 'bedrooms',
-                  'bathrooms', 'garage', 'sqft', 'land_area', 'terrace_area', 'lot_size', 'vid_name', 'tip_name', 'page_info', 'photo_main',  'is_published',]
+                  'bathrooms', 'garage', 'floors', 'sqft', 'land_area', 'terrace_area', 'lot_size', 'vid_name', 'tip_name', 'page_info', 'photo_main',  'is_published',]
 
         labels = {
             'realtor': 'Риэлторы',
@@ -19,6 +19,7 @@ class Form_Listing(forms.ModelForm):
             'state': 'Состояние',
             'land_area': 'площадь участка',
             'terrace_area': 'площадь террасы',
+            'floors' : 'Этажи',
 
 
 

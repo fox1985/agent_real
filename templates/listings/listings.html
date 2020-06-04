@@ -91,6 +91,13 @@
                     </div>
 
                    <div class="col">
+                     {% if listing.floors %}
+                      <span>Этаж:</span>
+                      <strong>{{ listing.floors }}</strong>
+                     {% endif %}
+                    </div>
+
+                   <div class="col">
                      {% if listing.rooms%}
                       <span>Комнат:</span>
                       <strong>{{ listing.rooms }}</strong>

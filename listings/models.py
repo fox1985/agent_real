@@ -51,6 +51,7 @@ class Listing(models.Model):
   bedrooms = models.IntegerField(verbose_name=u'спальни', blank=True)
   bathrooms = models.IntegerField(default=0, verbose_name=u'ванные комнаты', blank=True)
   garage = models.IntegerField(default=0, verbose_name=u'гараж')
+  floors = models.IntegerField(default=0, verbose_name=u'Этажи')
   sqft = models.IntegerField(default=0, verbose_name=u'Квадратные метры')
   land_area = models.CharField( verbose_name=u'площадь участка',max_length=200, blank=True)
   terrace_area = models.IntegerField(default=0, verbose_name=u'площадь террасы')
