@@ -74,6 +74,14 @@
                       {% endif %}
                   </li>
 
+
+                   <li>
+                      {% if listing.floors %}
+                    <span class="property-specs"> Этаж:</span>
+                    <span class="property-specs-number">{{ listing.floors }}<sup></sup></span>
+                      {% endif %}
+                  </li>
+
                   <li>
                       {% if listing.bathrooms %}
                     <span class="property-specs">ВАННЫ:</span>
