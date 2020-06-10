@@ -4,6 +4,27 @@ from django.shortcuts import render
 from search.forms import HousesFilterForm
 from listings.models import Listing, Category
 
+"""
+gt
+Больше чем.
+---------------
+gte
+Больше чем или равно.
+-------------------------
+lt
+Меньше чем.
+-----------------------------
+
+lte
+Меньше чем или равно.
+------------------------------------
+
+exact
+Точное совпадение.
+
+"""
+
+
 
 def search_form(request):
     """Поиск на сайте"""
@@ -20,7 +41,7 @@ def search_form(request):
 
         if housesform.cleaned_data['min_price']:
             'Поиск по ценам'
-            listings = listings.filter(Q(price__lte=housesform.cleaned_data['min_price']) | Q(price__gte=housesform.cleaned_data['max_price']))
+            listings = listings.filter(Q(price__gte=housesform.cleaned_data['min_price']) | Q(price__gte=housesform.cleaned_data['max_price']))
 
 
 
