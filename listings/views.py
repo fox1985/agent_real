@@ -14,8 +14,8 @@ from django.core.urlresolvers import reverse
 
 def listings(request,):
     """Главная страныица listings"""
-    listings = Listing.objects.order_by('-list_date').filter(is_published=True)
-    paginator = Paginator(listings, 6)  # выводит сколько страници  должно быть до погинации
+    listings = Listing.objects.order_by('price').filter(is_published=True,)
+    paginator = Paginator(listings, 100)  # выводит сколько страници  должно быть до погинации
     # подключиение пагинацыи
     page = request.GET.get('page')
     try:

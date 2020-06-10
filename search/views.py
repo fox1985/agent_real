@@ -14,9 +14,13 @@ def search_form(request):
     'поиск на сайте'
     housesform = HousesFilterForm(request.GET)
     if housesform.is_valid():
+        if housesform.cleaned_data['max_price']:
+            'Поиск по ценам'
+            listings = listings.filter(Q(price__lte=housesform.cleaned_data['min_price']) | Q(price__lte=housesform.cleaned_data['max_price']))
+
         if housesform.cleaned_data['min_price']:
             'Поиск по ценам'
-            listings = listings.filter(Q(price__icontains=housesform.cleaned_data['min_price']) | Q(price__icontains=housesform.cleaned_data['max_price']))
+            listings = listings.filter(Q(price__lte=housesform.cleaned_data['min_price']) | Q(price__gte=housesform.cleaned_data['max_price']))
 
 
 
