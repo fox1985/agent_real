@@ -180,3 +180,13 @@ msgstr "A wide range of real estate"
 
 msgid "На галвную страницу"
 msgstr "To the main page"
+
+msgid "Редактировать страницу"
+msgstr "Edit page"
+
+msgid "Сохранить"
+msgstr "Save"
+
+
+msgid "Добавить страницу"
+msgstr "Add page"
