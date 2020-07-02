@@ -1,6 +1,6 @@
  {% extends 'base.html' %}
 
-{% load static %}
+{% load static i18n %}
 {% load humanize %}
 
   {% block content %}
@@ -17,11 +17,11 @@
           </li>
 
 
-          <li class="breadcrumb-item active"> Просмотр списков</li>
+          <li class="breadcrumb-item active">{% trans 'Просмотр списков' %} </li>
 
             <li class="breadcrumb-item">
                  {# Авторизированый пользователь да или нет #}
-                <a href="{% url 'new_page' %}">Добавить</a>
+                <a href="{% url 'new_page' %}">{% trans 'Добавить' %}</a>
             </li>
 
         </ol>
@@ -40,7 +40,7 @@
         <div class="row mb-5">
           <div class="col-12">
             <div class="site-section-title">
-              <h2>КАТАЛОГ НЕДВИЖИМОСТИ В ИСПАНИИ</h2>
+              <h2>{% trans 'КАТАЛОГ НЕДВИЖИМОСТИ В ИСПАНИИ' %}</h2>
             </div>
 
           </div>
@@ -64,33 +64,33 @@
                   <div class="inner d-flex">
                     <div class="col">
                         {% if listing.sqft %}
-                         <span>Площадь:</span>
+                         <span>{% trans 'Площадь:' %}</span>
                          <strong>{{ listing.sqft }}м<sup>2</sup></strong>
                         {% endif %}
                     </div>
                     <div class="col">
                       {% if listing.bedrooms %}
-                      <span>Спальни:</span>
+                      <span>{% trans 'Спальни:' %}</span>
                       <strong>{{ listing.bedrooms }}</strong>
                       {% endif %}
                     </div>
                     <div class="col">
                         {% if listing.bathrooms %}
-                      <span>Ванны:</span>
+                      <span>{% trans 'Ванны:' %}</span>
                       <strong>{{ listing.bathrooms }}</strong>
                         {% endif %}
                     </div>
 
                     <div class="col">
                      {% if listing.garage %}
-                      <span>Гаражи:</span>
+                      <span>{% trans 'Гаражи:' %}</span>
                       <strong>{{ listing.garage }}</strong>
                      {% endif %}
                     </div>
 
                    <div class="col">
                      {% if listing.rooms%}
-                      <span>Комнат:</span>
+                      <span>{% trans 'Комнат:' %}</span>
                       <strong>{{ listing.rooms }}</strong>
                      {% endif %}
                     </div>
@@ -106,7 +106,7 @@
 
             {% else %}
               <div class="col-md-12">
-             <p>Не найдено публикаций по вашему запросу<br>Попробуйте повторить запрос с другой формулировкой</p>
+             <p>{% trans 'Не найдено публикаций по вашему запросу' %}<br>{% trans 'Попробуйте повторить запрос с другой формулировкой' %}</p>
               </div>
 
              {% endif %}

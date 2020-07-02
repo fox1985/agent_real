@@ -1,5 +1,5 @@
  {% extends 'base.html' %}
-
+{% load static i18n %}
 {% load static %}
 {% load humanize %}
 {% block title %}{{ category_name }}{% endblock %}
@@ -17,7 +17,7 @@
         <div class="row mb-5">
           <div class="col-12">
             <div class="site-section-title">
-              <h2>КАТАЛОГ НЕДВИЖИМОСТИ В ИСПАНИИ</h2>
+              <h2>{% trans 'КАТАЛОГ НЕДВИЖИМОСТИ В ИСПАНИИ' %}</h2>
             </div>
           </div>
         </div>
@@ -40,33 +40,33 @@
                   <div class="inner d-flex">
                     <div class="col">
                         {% if listing.sqft %}
-                         <span>Площадь:</span>
+                         <span>{% trans 'Площадь:' %}</span>
                          <strong>{{ listing.sqft }}м<sup>2</sup></strong>
                         {% endif %}
                     </div>
                     <div class="col">
                       {% if listing.bedrooms %}
-                      <span>Спальни:</span>
+                      <span>{% trans 'Спальни:' %}</span>
                       <strong>{{ listing.bedrooms }}</strong>
                       {% endif %}
                     </div>
                     <div class="col">
                         {% if listing.bathrooms %}
-                      <span>Ванны:</span>
+                      <span>{% trans 'Ванны:' %}</span>
                       <strong>{{ listing.bathrooms }}</strong>
                         {% endif %}
                     </div>
 
                     <div class="col">
                      {% if listing.garage %}
-                      <span>Гаражи:</span>
+                      <span>{% trans 'Гаражи:' %}</span>
                       <strong>{{ listing.garage }}</strong>
                      {% endif %}
                     </div>
 
                    <div class="col">
                      {% if listing.rooms%}
-                      <span>Комнат:</span>
+                      <span>{% trans 'Комнат:' %}</span>
                       <strong>{{ listing.rooms }}</strong>
                      {% endif %}
                     </div>
@@ -82,7 +82,7 @@
 
             {% else %}
               <div class="col-md-12">
-              <p>Нет доступных объявлений</p>
+              <p>{% trans 'Нет доступных объявлений' %}</p>
               </div>
 
              {% endif %}

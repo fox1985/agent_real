@@ -3,7 +3,7 @@
 {#под коючаем тег #}
 {% load listings_tag %}
 
-{% load static %}
+{% load static i18n %}
 {% load humanize %}
 
 {% block desc %}{{ listing.description }}{% endblock desc %}
@@ -62,14 +62,14 @@
                   <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
                   <li>
                       {% if listing.bedrooms %}
-                    <span class="property-specs">Спальни:</span>
+                    <span class="property-specs">{% trans  'Спальни:'%}</span>
                     <span class="property-specs-number">{{ listing.bedrooms }}<sup></sup></span>
                       {% endif %}
                   </li>
 
                    <li>
                       {% if listing.rooms %}
-                    <span class="property-specs">Комнат:</span>
+                    <span class="property-specs">{% trans 'Комнат:' %}</span>
                     <span class="property-specs-number">{{ listing.rooms }}<sup></sup></span>
                       {% endif %}
                   </li>
@@ -77,20 +77,20 @@
 
                    <li>
                       {% if listing.floors %}
-                    <span class="property-specs"> Этаж:</span>
+                    <span class="property-specs">{% trans 'Этаж:' %}</span>
                     <span class="property-specs-number">{{ listing.floors }}<sup></sup></span>
                       {% endif %}
                   </li>
 
                   <li>
                       {% if listing.bathrooms %}
-                    <span class="property-specs">ВАННЫ:</span>
+                    <span class="property-specs">{% trans 'ВАННЫ:' %}</span>
                     <span class="property-specs-number">{{ listing.bathrooms }}</span>
                       {% endif %}
                   </li>
                   <li>
                       {% if listing.sqft %}
-                    <span class="property-specs">Площадь:</span>
+                    <span class="property-specs">{% trans 'Площадь:' %}</span>
                     <span class="property-specs-number">{{ listing.sqft }}м<sup>2</sup></span>
                       {% endif %}
                   </li>
@@ -99,14 +99,14 @@
 
                       <li>
                           {% if listing.city %}
-                          <span class="property-specs">Город:</span>
+                          <span class="property-specs">{% trans 'Площадь:' %}</span>
                           <span class="property-specs-number">{{ listing.city }}</span>
                           {% endif %}
                       </li>
 
                       <li>
                           {% if listing.region %}
-                          <span class="property-specs">Регион:</span>
+                          <span class="property-specs">{% trans 'Регион:' %}</span>
                           <span class="property-specs-number">{{ listing.region }}</span>
                           {% endif %}
                       </li>
@@ -115,7 +115,7 @@
 
                        <li>
                           {% if listing.district %}
-                          <span class="property-specs">Район:</span>
+                          <span class="property-specs">{% trans 'Район:' %}</span>
                           <span class="property-specs-number">{{ listing.district }}</span>
                           {% endif %}
                       </li>
@@ -135,7 +135,7 @@
                       </li>
                         <li class="breadcrumb-item">
 
-                            <a href="{% url 'edit_page' listing.id %}">Редактировать</a>
+                            <a href="{% url 'edit_page' listing.id %}">{% trans  'Редактировать' %}</a>
 
                         </li>
                     </ol>
@@ -146,17 +146,17 @@
                 <!--Редактироать товар--->
               <div class="row mb-5">
                 <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
-                  <span class="d-inline-block text-black mb-0 caption-text">Тип Недвижимости</span>
+                  <span class="d-inline-block text-black mb-0 caption-text">{% trans 'Тип Недвижимости' %}</span>
                   <strong class="d-block">{{ listing.tip_name }}</strong>
                 </div>
 
                 <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
-                  <span class="d-inline-block text-black mb-0 caption-text">номер ID</span>
+                  <span class="d-inline-block text-black mb-0 caption-text">{% trans 'номер ID' %}</span>
                   <strong class="d-block">{{ listing.lot_size }}</strong>
                 </div>
 
                 <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
-                  <span class="d-inline-block text-black mb-0 caption-text">Вид недвижимости</span>
+                  <span class="d-inline-block text-black mb-0 caption-text">{% trans 'Вид недвижимости' %}</span>
                   <strong class="d-block">{{ listing.vid_name }}</strong>
                 </div>
 
@@ -164,7 +164,7 @@
                         <br>
                         <!--Если поля пустое оно не выводится--->
                        {% if listing.sale_and_rental %}
-                        <span class="d-inline-block text-black mb-0 caption-text">Для</span>
+                        <span class="d-inline-block text-black mb-0 caption-text">{% trans 'Для' %}</span>
                         <strong class="d-block">{{ listing.sale_and_rental }}</strong>
                        {% endif %}
                        <!--Если поля пустое оно не выводится--->
@@ -174,7 +174,7 @@
                         <br>
                        <!--Если поля пустое оно не выводится--->
                         {% if listing.from_the_sea %}
-                        <span class="d-inline-block text-black mb-0 caption-text">От моря</span>
+                        <span class="d-inline-block text-black mb-0 caption-text">{% trans 'От моря' %}</span>
                         <strong class="d-block">{{ listing.from_the_sea }}м<sup></sup></strong>
                         {% endif %}
                          <!--Если поля пустое оно не выводится--->
@@ -185,7 +185,7 @@
                         <br>
                        <!--Если поля пустое оно не выводится--->
                         {% if listing.land_area %}
-                        <span class="d-inline-block text-black mb-0 caption-text">ПЛОЩАДЬ УЧАСТКА</span>
+                        <span class="d-inline-block text-black mb-0 caption-text">{% trans 'ПЛОЩАДЬ УЧАСТКА' %}</span>
                         <strong class="d-block">{{ listing.land_area }}м<sup></sup></strong>
                         {% endif %}
                          <!--Если поля пустое оно не выводится--->
@@ -197,7 +197,7 @@
                         <br>
                        <!--Если поля пустое оно не выводится--->
                         {% if listing.terrace_area %}
-                        <span class="d-inline-block text-black mb-0 caption-text">площадь террасы</span>
+                        <span class="d-inline-block text-black mb-0 caption-text">{% trans 'площадь террасы' %}</span>
                         <strong class="d-block">{{ listing.terrace_area }}м<sup></sup></strong>
                         {% endif %}
                          <!--Если поля пустое оно не выводится--->
@@ -209,7 +209,7 @@
 
 
 
-              <h2 class="h4 text-black">Больше информации</h2>
+              <h2 class="h4 text-black">{% trans 'Больше информации' %}</h2>
                 <p>{{ listing.description }}</p>
 
 
@@ -218,7 +218,7 @@
 
               <div class="row mt-5">
                 <div class="col-12">
-                  <h2 class="h4 text-black mb-3">Галерея недвижимости</h2>
+                  <h2 class="h4 text-black mb-3">{% trans 'Галерея недвижимости' %}</h2>
                 </div>
                   {% for gal in listing.galary_image_set.all %}
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
@@ -234,7 +234,7 @@
           <div class="col-lg-4 pl-md-5">
             <div class="bg-white widget border rounded">
 
-              <h3 class="h4 text-black widget-title mb-3">КОНТАКТНЫЙ АГЕНТ</h3>
+              <h3 class="h4 text-black widget-title mb-3">{% trans 'КОНТАКТНЫЙ АГЕНТ' %}</h3>
                 <p class="mb-3">
                      <a href="#"><span class="text-black fl-bigmug-line-email64"></span> <span class="d-none d-md-inline-block ml-2">{{ listing.realtor.email }}</span></a>
                 </p>
@@ -242,7 +242,7 @@
                     <a href="#" class="mr-4"><span class="text-black fl-bigmug-line-phone351"></span> <span class="d-none d-md-inline-block ml-2">{{ listing.realtor.phone }}</span></a>
                 </p>
                 {%  if sended %}
-                 Спасибо! Заявка принята!
+                 {% trans 'Спасибо! Заявка принята!' %}
 
                 {% endif %}
 
@@ -251,7 +251,7 @@
                  {{ form.as_p }}
 
                  <div class="form-group">
-                  <input type="submit" id="phone" class="btn btn-primary" value="Отравить">
+                  <input type="submit" id="phone" class="btn btn-primary" value="{% trans 'Отравить' %}">
                 </div>
               </form>
             </div>
@@ -260,7 +260,7 @@
 
 
             <div class="bg-white widget border rounded">
-              <h3 class="h4 text-black widget-title mb-3">Удобства</h3>
+              <h3 class="h4 text-black widget-title mb-3">{% trans 'Удобства' %}</h3>
                 {% for info in listing.page_info.all %}<!--ManyToManyField--->
                     <p><i class="fa fa-check-circle"></i> {{ info.info_name }}</p>
                 {% endfor %}<!--ManyToManyField--->
@@ -278,12 +278,12 @@
         <div class="row">
           <div class="col-12">
             <div class="site-section-title mb-5">
-              <h2>похожие объекты</h2>
+              <h2>{% trans 'похожие объекты' %}</h2>
             </div>
           </div>
         </div>
 
-      {% get_last_Listings count=4 %}
+      {% get_last_Listings count=6 %}
           <!--Вызов тега-->
 
 

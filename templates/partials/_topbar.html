@@ -1,3 +1,6 @@
+{% load listings_tag %}
+
+{% load static i18n %}
 <div class="site-loader"></div>
 
   <div class="site-wrap">
@@ -23,9 +26,9 @@
             <a href="#"><span class="d-none d-md-inline-block ml-3">
                  {# проверка вошол лили пользователь #}
                 {% if not request.user.is_authenticated %}
-                    Здравствуйте, гость
+                    {% trans "Здравствуйте, гость" %}
                 {% else %}
-                     Здравствуйте, {{ request.user}}
+                    {% trans "Здравствуйте" %}, {{ request.user}}
 
                 {% endif %}
                 {# проверка вошол лили пользователь #}

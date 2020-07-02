@@ -1,4 +1,6 @@
+{% load listings_tag %}
 
+{% load static i18n %}
 <div class="row mb-5">
     {% for r in reals %}
           <div class="col-md-6 col-lg-4 mb-4">
@@ -15,19 +17,19 @@
                 <div class="prop-more-info">
                   <div class="inner d-flex">
                     <div class="col">
-                      <span>Площадь:</span>
+                      <span>{% trans 'Площадь:' %}</span>
                       <strong>{{ r.sqft }}m<sup>2</sup></strong>
                     </div>
                     <div class="col">
-                      <span>Спальни:</span>
+                      <span>{% trans 'Спальни:' %}</span>
                       <strong>{{ r.bedrooms }}</strong>
                     </div>
                     <div class="col">
-                      <span>Ванны:</span>
+                      <span>{% trans 'Ванны:' %}</span>
                       <strong>{{ r.bathrooms }}</strong>
                     </div>
                     <div class="col">
-                      <span>Гаражи:</span>
+                      <span>{% trans 'Гаражи:' %}</span>
                       <strong>{{ r.garage }}</strong>
                     </div>
                   </div>

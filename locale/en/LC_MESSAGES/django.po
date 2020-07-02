@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-28 17:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+#_carousel.html
+msgid "Подробнее"
+msgstr "More details"
+
+#: templates/listings/listing.html:65 templates/listings/listings.html:75
+msgid "Спальни:"
+msgstr "Bedrooms:"
+
+#: templates/listings/listing.html:72 templates/listings/listings.html:102
+msgid "Комнат:"
+msgstr "Rooms:"
+
+#: templates/listings/listing.html:80 templates/listings/listings.html:95
+msgid "Этаж:"
+msgstr "Floor:"
+
+#: templates/listings/listing.html:87
+msgid "ВАННЫ:"
+msgstr "BATHROOMS:"
+
+#: templates/listings/listing.html:93 templates/listings/listings.html:69
+msgid "Площадь:"
+msgstr "Area:"
+
+
+#: templates/listings/listing.html:102
+msgid "Город:"
+msgstr "Town:"
+
+#: templates/listings/listing.html:109
+msgid "Регион:"
+msgstr "Region:"
+
+#: templates/listings/listing.html:118
+msgid "Район:"
+msgstr "District:"
+
+#: templates/listings/listing.html:138
+msgid "Редактировать"
+msgstr "Edit"
+
+#: templates/listings/listing.html:149
+msgid "Тип Недвижимости"
+msgstr "Property Type"
+
+#: templates/listings/listing.html:154
+msgid "номер ID"
+msgstr "number ID"
+
+#: templates/listings/listing.html:159
+msgid "Вид недвижимости"
+msgstr "Type of property"
+
+#: templates/listings/listing.html:167
+msgid "Для"
+msgstr "For"
+
+#: templates/listings/listing.html:177
+msgid "От моря"
+msgstr "From the sea"
+
+#: templates/listings/listing.html:188
+msgid "ПЛОЩАДЬ УЧАСТКА"
+msgstr "LAND AREA"
+
+#: templates/listings/listing.html:200
+msgid "площадь террасы"
+msgstr "terrace area"
+
+#: templates/listings/listing.html:212
+msgid "Больше информации"
+msgstr "More information"
+
+#: templates/listings/listing.html:221
+msgid "Галерея недвижимости"
+msgstr "Property Gallery"
+
+#: templates/listings/listing.html:237
+msgid "КОНТАКТНЫЙ АГЕНТ"
+msgstr "CONTACT AGENT"
+
+#: templates/listings/listing.html:254
+msgid "Отравить"
+msgstr "To poison"
+
+#: templates/listings/listing.html:263
+msgid "Удобства"
+msgstr "Facilities"
+
+#: templates/listings/listing.html:281
+msgid "похожие объекты"
+msgstr "similar objects"
+
+#: templates/listings/listings.html:45
+msgid "КАТАЛОГ НЕДВИЖИМОСТИ В ИСПАНИИ"
+msgstr "REAL ESTATE CATALOG IN SPAIN"
+
+#: templates/listings/listings.html:81
+msgid "Ванны:"
+msgstr "Bathtubs:"
+
+#: templates/listings/listings.html:22
+msgid "Просмотр списков"
+msgstr "View Lists"
+
+#: templates/listings/listings.html:88
+msgid "Гаражи:"
+msgstr "Garages:"
+
+#: templates/listings/listings.html:26
+msgid "Добавить"
+msgstr "Add"
+
+#: templates/listings/listings.html:118
+msgid "Нет доступных объявлений"
+msgstr "No ads available"
+
+#: templates/partials/_navbar.html:18
+msgid "Главная"
+msgstr "home"
+
+#: templates/partials/_navbar.html:51
+msgid "Вход"
+msgstr "entrance"
+
+msgid "Имя"
+msgstr "Name"
+
+msgid "Номер ID"
+msgstr "Number ID"
+
+msgid "Телефон"
+msgstr "Telephone"
+
+msgid "Введите текст с картинки"
+msgstr "Enter the text from the image"
+
+msgid "Сообщения"
+msgstr "Messages"
+#-------------------------------------------------------------
+msgid "Здравствуйте, гость"
+msgstr "Hello Guest"
+
+
+msgid "Выйти"
+msgstr "Log off"
+
+msgid "Свойства"
+msgstr "Properties"
+
+msgid "Не найдено публикаций по вашему запросу"
+msgstr "No posts found for your request"
+
+msgid "Попробуйте повторить запрос с другой формулировкой"
+msgstr "Try the query again with a different wording."
+
+
+msgid "Широкий ассортимент недвижимости"
+msgstr "A wide range of real estate"
+
+msgid "На галвную страницу"
+msgstr "To the main page"

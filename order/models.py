@@ -5,12 +5,14 @@ from datetime import datetime
 from  listings.models import Listing
 
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
+
 
 
 # Create your models here.
 class Order(models.Model):
     listing = models.ForeignKey(Listing, verbose_name='список')
-    name = models.CharField(max_length=100, verbose_name='Имя',)
+    name = models.CharField(max_length=100, verbose_name='Имя')
     email = models.EmailField()
     nomer = models.CharField(max_length=100, verbose_name='Номер ID')
     telephone = models.CharField(max_length=100, verbose_name='Телефон')
