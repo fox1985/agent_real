@@ -12,11 +12,11 @@ from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 class Order(models.Model):
     listing = models.ForeignKey(Listing, verbose_name='список')
-    name = models.CharField(max_length=100, verbose_name='Имя')
+    name = models.CharField(max_length=100, verbose_name=_('Имя'))
     email = models.EmailField()
-    nomer = models.CharField(max_length=100, verbose_name='Номер ID')
-    telephone = models.CharField(max_length=100, verbose_name='Телефон')
-    text = models.TextField(verbose_name='Сообщения',)
+    nomer = models.CharField(max_length=100, verbose_name=_('Номер ID'))
+    telephone = models.CharField(max_length=100, verbose_name=_('Телефон'))
+    text = models.TextField(verbose_name=_('Сообщения',))
     contact_date = models.DateTimeField(default=datetime.now, blank=True)
 
 
